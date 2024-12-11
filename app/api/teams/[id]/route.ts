@@ -10,13 +10,13 @@ export async function PUT(
 ) {
   try {
     const session = await getServerSession(authOptions);
-    if (!session || session.user.role !== "admin") {
+    if (!session || session?.user?.role !== "admin") {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
     await connect();
     const data = await request.json();
-    const team = await Team.findByIdAndUpdate(params.id, data, { new: true });
+    const team = await Team.findByIdAndUpdate(params?.id, data, { new: true });
     
     if (!team) {
       return NextResponse.json({ error: "Team not found" }, { status: 404 });
@@ -37,7 +37,7 @@ export async function DELETE(
 ) {
   try {
     const session = await getServerSession(authOptions);
-    if (!session || session.user.role !== "admin") {
+    if (!session || session?.user?.role !== "admin") {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 

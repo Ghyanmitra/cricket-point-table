@@ -17,13 +17,13 @@ export default function TeamRow({ team, position }: TeamRowProps) {
         )}
         {position}
       </TableCell>
-      <TableCell className="font-medium">{team.name}</TableCell>
-      <TableCell className="text-center">{team.matches}</TableCell>
-      <TableCell className="text-center">{team.won}</TableCell>
-      <TableCell className="text-center">{team.lost}</TableCell>
-      <TableCell className="text-center">{team.tied}</TableCell>
-      <TableCell className="text-center font-bold">{team.points}</TableCell>
-      <TableCell className="text-center">{formatNRR(team.nrr)}</TableCell>
+      <TableCell className="font-medium">{team?.name}</TableCell>
+      <TableCell className="text-center">{team?.matches}</TableCell>
+      <TableCell className="text-center">{team?.won}</TableCell>
+      <TableCell className="text-center">{team?.lost}</TableCell>
+      <TableCell className="text-center">{team?.tied}</TableCell>
+      <TableCell className="text-center font-bold">{team?.points}</TableCell>
+      <TableCell className="text-center">{formatNRR(team?.nrr)}</TableCell>
     </TableRow>
   );
 }
